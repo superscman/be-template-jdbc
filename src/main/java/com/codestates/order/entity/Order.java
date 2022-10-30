@@ -24,11 +24,11 @@ public class Order {
     // 테이블 외래키처럼 memberId를 추가해서 참조하도록 한다.
     private AggregateReference<Member, Long> memberId;
 
-    @MappedCollection(idColumn = "ORDER_ID")
+    @MappedCollection(idColumn = "ORDER_ID", keyColumn = "ORDER_COFFEE_ID")
     private Set<CoffeeRef> orderCoffees = new LinkedHashSet<>();
 
     private OrderStatus orderStatus = OrderStatus.ORDER_REQUEST;
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     public enum OrderStatus {
         ORDER_REQUEST(1, "주문 요청"),

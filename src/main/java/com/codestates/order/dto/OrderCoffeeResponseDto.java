@@ -1,18 +1,14 @@
-package com.codestates.coffee.entity;
+package com.codestates.order.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
 @Getter
-@Setter
 @AllArgsConstructor
-public class Coffee {
-    @Id
+public class OrderCoffeeResponseDto {
     private long coffeeId;
     private String korName;
     private String engName;
     private int price;
-    private String coffeeCode;
+    private int quantity;
 }
